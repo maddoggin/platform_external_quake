@@ -529,7 +529,7 @@ qpic_t *Draw_PicFromWad (const char *name)
   // load little ones into the scrap
   if (p->width < 64 && p->height < 64)
   {
-    int		x, y;
+    int		x, y = 0;
     int		i, j, k;
     int		texnum;
 
