@@ -61,11 +61,18 @@ qboolean isPermedia = false;
 qboolean gl_mtexable = false;
 
 /*-----------------------------------------------------------------------*/
-void D_BeginDirectRect (int x, int y, byte *pbitmap, int width, int height)
+void D_BeginDirectRect (int _QUAKE_UNUSED(x),
+                        int _QUAKE_UNUSED(y),
+                        byte _QUAKE_UNUSED(*pbitmap),
+                        int _QUAKE_UNUSED(width),
+                        int _QUAKE_UNUSED(height))
 {
 }
 
-void D_EndDirectRect (int x, int y, int width, int height)
+void D_EndDirectRect (int _QUAKE_UNUSED(x),
+                      int _QUAKE_UNUSED(y),
+                      int _QUAKE_UNUSED(width),
+                      int _QUAKE_UNUSED(height))
 {
 }
 
@@ -73,7 +80,7 @@ void VID_Shutdown(void)
 {
 }
 
-void VID_ShiftPalette(unsigned char *p)
+void VID_ShiftPalette(unsigned char _QUAKE_UNUSED(*p))
 {
 //	VID_SetPalette(p);
 }
@@ -533,7 +540,8 @@ public:
      * @param ev the motion event to analyze.
      */
     void analyze(unsigned long long eventTime, int action,
-            float x, float y, float pressure, float size, int deviceId) {
+            float x, float y, float _QUAKE_UNUSED(pressure),
+            float _QUAKE_UNUSED(size), int _QUAKE_UNUSED(deviceId)) {
         mIsScroll = false;
         mIsTap = false;
         mIsDoubleTap = false;
@@ -672,7 +680,7 @@ int AndroidMotionEvent(unsigned long long eventTime, int action,
     return true;
 }
 
-int AndroidTrackballEvent(unsigned long long eventTime, int action,
+int AndroidTrackballEvent(unsigned long long _QUAKE_UNUSED(eventTime), int action,
         float x, float y)
 {
     switch (action ) {

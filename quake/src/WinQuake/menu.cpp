@@ -2908,7 +2908,7 @@ void M_Search_Draw (void)
 }
 
 
-void M_Search_Key (int key)
+void M_Search_Key (int _QUAKE_UNUSED(key))
 {
 }
 

@@ -1153,7 +1153,7 @@ typedef union swapTest_ {
     short s;
 } swapTest;
 
-void COM_Init (const char *basedir)
+void COM_Init (const char _QUAKE_UNUSED(*basedir))
 {
 	swapTest swaptest;
 	swaptest.b[0] = 1;

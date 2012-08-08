@@ -373,7 +373,7 @@ Report valid data being written into the DMA buffer by the sound mixing code.
 This is an Android specific API.
 ================
 */
-void SNDDMA_ReportWrite(size_t lengthBytes) {
+void SNDDMA_ReportWrite(size_t _QUAKE_UNUSED(lengthBytes)) {
     // TODO: keep track of how much of the sound ring buffer has sound in it,
     // detect starvation, and mix silence when we are starving.
 }

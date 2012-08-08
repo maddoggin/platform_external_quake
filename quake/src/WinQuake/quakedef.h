@@ -453,6 +453,12 @@ void InitFrameTimes();
 
 #define SUPPORT_8BIT_MIPMAPGENERATION
 
+#ifdef __GNUC__
+#define _QUAKE_UNUSED(x) x __attribute__((unused))
+#else
+#define _QUAKE_UNUSED(x) x
+#endif /* __GNUC__ */
+
 #ifdef SUPPORT_8BIT_MIPMAPGENERATION
 extern unsigned char d_15to8table[65536];
 #endif // SUPPORT_8BIT_MIPMAPGENERATION

@@ -321,7 +321,7 @@ static int PartialIPAddress (const char *in, struct qsockaddr *hostaddr)
 }
 //=============================================================================
 
-int UDP_Connect (int socket, struct qsockaddr *addr)
+int UDP_Connect (int _QUAKE_UNUSED(socket), struct qsockaddr _QUAKE_UNUSED(*addr))
 {
 	return 0;
 }

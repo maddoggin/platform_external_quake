@@ -733,7 +733,7 @@ Displays a text string in the center of the screen and waits for a Y or N
 keypress.
 ==================
 */
-int SCR_ModalMessage (const char *text)
+int SCR_ModalMessage (const char _QUAKE_UNUSED(*text))
 {
 	if (cls.state == ca_dedicated)
 		return true;

@@ -282,7 +282,7 @@ qboolean Datagram_CanSendMessage (qsocket_t *sock)
 }
 
 
-qboolean Datagram_CanSendUnreliableMessage (qsocket_t *sock)
+qboolean Datagram_CanSendUnreliableMessage (qsocket_t _QUAKE_UNUSED(*sock))
 {
 	return true;
 }

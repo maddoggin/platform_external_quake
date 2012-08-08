@@ -902,7 +902,7 @@ This is for debugging lockups by drawing different chars in different parts
 of the code.
 ================
 */
-void Draw_DebugChar (char num)
+void Draw_DebugChar (char _QUAKE_UNUSED(num))
 {
 }
 
@@ -1390,7 +1390,7 @@ void GL_MipMap8Bit (byte *in, byte* out, int width, int height)
 
 void glTexImage2DHelper( GLenum target,
    GLint level,
-   GLint internalformat,
+   GLint _QUAKE_UNUSED(internalformat),
    GLsizei width,
    GLsizei height,
    GLint border,

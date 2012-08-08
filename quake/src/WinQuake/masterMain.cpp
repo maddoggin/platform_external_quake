@@ -23,6 +23,8 @@
 #define LOG_TAG "QuakeMaster"
 #include <utils/Log.h>
 
+#include "quakedef.h"
+
 int AndroidInit();
 int AndroidEvent2(int type, int value);
 int AndroidMotionEvent(unsigned long long eventTime, int action,
@@ -33,38 +35,41 @@ int AndroidStep(int width, int height);
 void AndroidQuit();
 
 jboolean
-qinit(JNIEnv *env, jobject thiz) {
+qinit(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz)) {
     ALOGI("qinit");
     return AndroidInit() ? JNI_TRUE : JNI_FALSE;
  }
 
 jboolean
-qevent(JNIEnv *env, jobject thiz, jint type, jint value) {
+qevent(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz), jint type,
+       jint value) {
     return AndroidEvent2(type, value) ? JNI_TRUE : JNI_FALSE;
 }
 
 jboolean
-qmotionevent(JNIEnv *env, jobject thiz, jlong eventTime, jint action,
-        jfloat x, jfloat y, jfloat pressure, jfloat size, jint deviceId) {
+qmotionevent(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz),
+        jlong eventTime, jint action, jfloat x, jfloat y, jfloat pressure,
+        jfloat size, jint deviceId) {
     return AndroidMotionEvent((unsigned long long) eventTime,
             action, x, y, pressure, size,
             deviceId) ? JNI_TRUE : JNI_FALSE;
 }
 
 jboolean
-qtrackballevent(JNIEnv *env, jobject thiz, jlong eventTime, jint action,
-        jfloat x, jfloat y) {
+qtrackballevent(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz),
+        jlong eventTime, jint action, jfloat x, jfloat y) {
     return AndroidTrackballEvent((unsigned long long) eventTime,
             action, x, y) ? JNI_TRUE : JNI_FALSE;
 }
 
 jboolean
-qstep(JNIEnv *env, jobject thiz, jint width, jint height) {
+qstep(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz), jint width,
+      jint height) {
     return AndroidStep(width, height)  ? JNI_TRUE : JNI_FALSE;
 }
 
 void
-qquit(JNIEnv *env, jobject thiz) {
+qquit(JNIEnv _QUAKE_UNUSED(*env), jobject _QUAKE_UNUSED(thiz)) {
     ALOGI("qquit");
     AndroidQuit();
  }
@@ -126,7 +131,7 @@ typedef union {
     void* venv;
 } UnionJNIEnvToVoid;
 
-jint JNI_OnLoad(JavaVM* vm, void* reserved)
+jint JNI_OnLoad(JavaVM* vm, void* _QUAKE_UNUSED(reserved))
 {
     UnionJNIEnvToVoid uenv;
     uenv.venv = NULL;

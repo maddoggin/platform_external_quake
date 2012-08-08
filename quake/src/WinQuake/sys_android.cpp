@@ -63,7 +63,7 @@ cvar_t  sys_linerefresh = CVAR2("sys_linerefresh","0");// set for entity display
 // General routines
 // =======================================================================
 
-void Sys_DebugNumber(int y, int val)
+void Sys_DebugNumber(int _QUAKE_UNUSED(y), int _QUAKE_UNUSED(val))
 {
 }
 
@@ -342,7 +342,7 @@ double Sys_FloatTime (void)
 
 static volatile int oktogo;
 
-void alarm_handler(int x)
+void alarm_handler(int _QUAKE_UNUSED(x))
 {
   oktogo=1;
 }
@@ -351,7 +351,7 @@ void Sys_LineRefresh(void)
 {
 }
 
-void floating_point_exception_handler(int whatever)
+void floating_point_exception_handler(int _QUAKE_UNUSED(whatever))
 {
 //	Sys_Warn("floating point exception\n");
   signal(SIGFPE, floating_point_exception_handler);

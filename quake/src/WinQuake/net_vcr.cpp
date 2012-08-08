@@ -65,7 +65,7 @@ void VCR_ReadNext (void)
 }
 
 
-void VCR_Listen (qboolean state)
+void VCR_Listen (qboolean _QUAKE_UNUSED(state))
 {
 }
 
@@ -103,7 +103,7 @@ int VCR_GetMessage (qsocket_t *sock)
 }
 
 
-int VCR_SendMessage (qsocket_t *sock, sizebuf_t *data)
+int VCR_SendMessage (qsocket_t *sock, sizebuf_t _QUAKE_UNUSED(*data))
 {
 	int	ret;
 
@@ -133,17 +133,17 @@ qboolean VCR_CanSendMessage (qsocket_t *sock)
 }
 
 
-void VCR_Close (qsocket_t *sock)
+void VCR_Close (qsocket_t _QUAKE_UNUSED(*sock))
 {
 }
 
 
-void VCR_SearchForHosts (qboolean xmit)
+void VCR_SearchForHosts (qboolean _QUAKE_UNUSED(xmit))
 {
 }
 
 
-qsocket_t *VCR_Connect (const char *host)
+qsocket_t *VCR_Connect (const char _QUAKE_UNUSED(*host))
 {
 	return NULL;
 }
